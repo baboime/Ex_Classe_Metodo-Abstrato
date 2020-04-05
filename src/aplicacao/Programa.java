@@ -22,7 +22,7 @@ public class Programa {
 		int numeroContribuintes = sc.nextInt();
 		
 		for(int i=1; i <= numeroContribuintes; i++) {
-			System.out.println("Dados do contribuinte " + i+ ":");
+			System.out.println("Dados do contribuinte " + i + ":");
 			System.out.print("Pesso Física ou Juridica (f/j)? ");
 			char tipoPessoa = sc.next().charAt(0);
 			sc.nextLine();
@@ -49,12 +49,12 @@ public class Programa {
 		Double totalImposto = 0.0;
 		
 		for (Contribuinte contribuinte : listaContribuinte) {
-			System.out.println(String.format(contribuinte.getNome() + ": $ %.2f", contribuinte.calculoImposto()));
+			System.out.println(contribuinte.getNome() + ": $ " + String.format("%.2f", contribuinte.calculoImposto()));
 			totalImposto += contribuinte.calculoImposto();
 		}
 		
 		System.out.println();
-		System.out.println(String.format("TOTAL IMPOSTO: $ %.2f", totalImposto));
+		System.out.println("TOTAL IMPOSTO: $ " + String.format("%.2f", totalImposto));
 		
 		sc.close();
 	}
